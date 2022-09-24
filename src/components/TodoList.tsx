@@ -1,6 +1,7 @@
 import React from 'react'
 import { Todo } from '../model'
 import './InputFeild.css'
+import SingleTodo from './SingleTodo'
 
 interface Props {
     todos: Todo[]
@@ -11,7 +12,7 @@ interface Props {
 const TodoList: React.FC<Props> = ({ todos, setTodos }) => {
 
     const todosList = todos.map((item) => {
-        return <li key={item.id}>{item.todo}</li>
+        return <li key={item.id}><SingleTodo key={item.id} item={item} todos={todos} setTodos={setTodos} /></li>
     })
 
     return (
